@@ -1,0 +1,47 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+    tools:context="com.spcomps14.group11.hci.mathforkids.StartPage">
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="left|bottom"
+        android:background="@drawable/start_page_bg">
+
+        <ImageButton
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:id="@+id/learnButton"
+            android:layout_gravity="bottom"
+            android:background="@drawable/wooden_learn"
+            android:clickable="false"
+            android:layout_marginLeft="50dp"
+            android:layout_marginBottom="-20dp" />
+
+        <ImageButton
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:id="@+id/countButton"
+            android:layout_gravity="bottom"
+            android:background="@drawable/wooden_count"
+            android:clickable="false"
+            android:layout_marginLeft="50dp"
+            android:layout_marginBottom="-20dp" />
+
+        <ImageButton
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:id="@+id/solveButton"
+            android:layout_gravity="bottom"
+            android:background="@drawable/wooden_solve"
+            android:clickable="false"
+            android:layout_marginLeft="50dp"
+            android:layout_marginBottom="-20dp" />
+    </LinearLayout>
+</FrameLayout>
