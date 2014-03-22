@@ -11,11 +11,10 @@
 
     <ImageButton
         android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_height="100dp"
         android:id="@+id/btnHome"
         android:layout_gravity="center"
-        android:background="@drawable/home_chalk"
-        android:layout_marginBottom="33dp"
+        android:background="@drawable/greenhome"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 

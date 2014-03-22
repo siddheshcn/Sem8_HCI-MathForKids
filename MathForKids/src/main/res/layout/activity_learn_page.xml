@@ -1,4 +1,4 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,9 +8,36 @@
     android:background="@drawable/learn_bg">
 
     <ImageButton
-        android:layout_width="200dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:id="@+id/left"
+        android:layout_gravity="bottom"
+        android:focusableInTouchMode="false"
+        android:background="@drawable/leftbtn"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageButton
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:id="@+id/right"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/rightbtn" />
+
+    <ImageButton
+        android:layout_width="100dp"
         android:layout_height="100dp"
-        android:id="@+id/btnHome"
-        android:layout_gravity="center_horizontal|bottom"
-        android:background="@drawable/home_chalk" />
-</FrameLayout>
+        android:id="@+id/home"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/greenhome" />
+
+    <ImageView
+        android:layout_width="700dp"
+        android:layout_height="350dp"
+        android:id="@+id/screen"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

@@ -1,6 +1,8 @@
 package com.spcomps14.group11.hci.mathforkids;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -19,7 +21,7 @@ public class CountPage extends Activity implements View.OnClickListener {
 
     int clickedNo, questionNo, randomNumber, state, count;
     int[] questionSet;
-    boolean noClicked, start;
+    boolean noClicked, start, showingQuestion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +53,9 @@ public class CountPage extends Activity implements View.OnClickListener {
         clickedNo=0;
         questionSet= new int[]{0,1,2,3,4,5,6,7,8,9};
         noClicked= false;
+        showingQuestion=false;
         start=false;
+
 
         homeBtn= (ImageButton)findViewById(R.id.btnHome);
         homeBtn.setOnClickListener(this);
@@ -87,6 +91,7 @@ public class CountPage extends Activity implements View.OnClickListener {
         tcBox[9]= (ImageButton)findViewById(R.id.tc10);
 
         screen= (ImageButton)findViewById(R.id.countScreen);
+        screen.setOnClickListener(this);
 
 //        Initialization of image array.
         screenImages= new int[]{R.drawable.btn0_white,
@@ -167,6 +172,11 @@ public class CountPage extends Activity implements View.OnClickListener {
                     tcBox[count++].setBackground(getResources().getDrawable(R.drawable.crossdash));
                 nextQuestion();
             break;
+
+            case R.id.countScreen:
+                if(showingQuestion==false)
+                    nextQuestion();
+                break;
         }
     }
 
@@ -186,11 +196,27 @@ public class CountPage extends Activity implements View.OnClickListener {
             questionNo = questionSet[randomNumber];
             removeQuestion();
             screen.setBackground(getResources().getDrawable(screenImages[questionNo]));
+            showingQuestion=true;
         }
         else
         {
-            resetAll();
-            start=false;
+            new AlertDialog.Builder(this)
+                    .setTitle("Start again?")
+                    .setMessage("All 10 questions are answered. Do you want to take the quiz again?")
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            resetAll();
+                            start=false;
+                        }
+                    })
+                    .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            start=false;
+                        }
+                    })
+                    .show();
         }
     }
 
@@ -209,6 +235,7 @@ public class CountPage extends Activity implements View.OnClickListener {
         if(noClicked==false && start== true)
         {
             noClicked = true;
+            showingQuestion=false;
             clickedNo = no;
             setNumberClicked(no);
             if (isCorrect()) {
@@ -240,6 +267,7 @@ public class CountPage extends Activity implements View.OnClickListener {
     {
         noBtn[clickedNo].setBackground(getResources().getDrawable(greyChalk[clickedNo]));
         screen.setBackground(getResources().getDrawable(R.drawable.count_startscreen));
+        showingQuestion=false;
         state=9;
         count=0;
         clickedNo=0;
@@ -247,7 +275,5 @@ public class CountPage extends Activity implements View.OnClickListener {
         for(int i=0; i<10; i++)
             tcBox[i].setBackground(getResources().getDrawable(R.drawable.dash));
     }
-
-
 
 }
