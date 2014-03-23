@@ -94,16 +94,16 @@ public class CountPage extends Activity implements View.OnClickListener {
         screen.setOnClickListener(this);
 
 //        Initialization of image array.
-        screenImages= new int[]{R.drawable.btn0_white,
-                R.drawable.btn1_white,
-                R.drawable.btn2_white,
-                R.drawable.btn3_white,
-                R.drawable.btn4_white,
-                R.drawable.btn5_white,
-                R.drawable.btn6_white,
-                R.drawable.btn7_white,
-                R.drawable.btn8_white,
-                R.drawable.btn9_white};
+        screenImages= new int[]{R.drawable.countzero,
+                R.drawable.countone,
+                R.drawable.counttwo,
+                R.drawable.countthree,
+                R.drawable.countfour,
+                R.drawable.countfive,
+                R.drawable.countsix,
+                R.drawable.countseven,
+                R.drawable.counteight,
+                R.drawable.countnine};
 
         whiteChalk= new int[]{R.drawable.btn0_white,
                 R.drawable.btn1_white,
