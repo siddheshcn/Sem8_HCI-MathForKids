@@ -9,7 +9,7 @@
         android:theme="@android:style/Theme.Wallpaper.NoTitleBar.Fullscreen" >
         <activity
             android:name="com.spcomps14.group11.hci.mathforkids.StartPage"
-            android:configChanges="orientation|keyboardHidden|screenSize" >
+            android:screenOrientation="landscape" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,16 +18,18 @@
         </activity>
         <activity
             android:name="com.spcomps14.group11.hci.mathforkids.LearnPage"
-            android:label="@string/title_activity_learn_page" >
+            android:label="@string/title_activity_learn_page"
+            android:screenOrientation="landscape">
         </activity>
         <activity
             android:name="com.spcomps14.group11.hci.mathforkids.CountPage"
-            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="landscape"
             android:label="@string/title_activity_count_page" >
         </activity>
         <activity
             android:name="com.spcomps14.group11.hci.mathforkids.SolvePage"
-            android:label="@string/title_activity_solve_page" >
+            android:label="@string/title_activity_solve_page"
+            android:screenOrientation="landscape">
         </activity>
     </application>
 
